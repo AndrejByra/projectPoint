@@ -55,9 +55,12 @@ public class Point implements Geometry {
         return Math.sqrt(x*x+y*y);
     }
 
-    public void print ()
+    public void printPointInfo ()
     {
-        System.out.println("Point: ["+x+"; "+y+"], Q: "+getQuadrant()+"., Distance: "+getDistance());
+        System.out.println("X: "+getX());
+        System.out.println("Y: "+getY());
+        System.out.println("Quadrant: "+getQuadrant());
+        System.out.println("Distance: "+getDistance());
     }
 
     public double getDistanceFromOtherPoint (Point other)
@@ -65,17 +68,21 @@ public class Point implements Geometry {
         return Math.sqrt(Math.pow(x-other.getX(),2)+Math.pow(y-other.getY(),2));
     }
 
-    public void doAxialSymmetry (char type)
+    public void doAxialSymmetric (char type)
     {
-        if (type=='x' || type=='X')
-            y=-y;
-        else if (type=='y' || type=='Y')
-            x=-x;
+        if(type=='x'){
+            this.y=this.y*(-1);
+        }
+        else if (type=='y'){
+            this.x=this.x*(-1);
+        }
+        else
+            return;
     }
 
     public void doPointReflection ()
     {
-        x=-x;
-        y=-y;
+        this.x=this.x*(-1);
+        this.y=this.y*(-1);
     }
 }

@@ -38,7 +38,7 @@ public class Point3d extends Point {
     }
 
     @Override
-    public void print() {
+    public void printPointInfo() {
         System.out.println("X: "+getX());
         System.out.println("Y: "+getY());
         System.out.println("Z: "+z);
