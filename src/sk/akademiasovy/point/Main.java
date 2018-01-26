@@ -1,6 +1,7 @@
 package sk.akademiasovy.point;
 
 import sk.akademiasovy.day.myDate;
+import sk.akademiasovy.other.myClass;
 
 public class Main {
     public static void main(String[] args) {
@@ -77,7 +78,8 @@ public class Main {
         myDate myDate = new myDate();
         myDate.today2();
 
-
+        myClass myclass=new myClass();
+        System.out.println();
     }
 
 }
