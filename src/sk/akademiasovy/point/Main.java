@@ -1,5 +1,8 @@
 package sk.akademiasovy.point;
 
+import abstrakt.Person;
+import abstrakt.Student;
+import abstrakt.Teacher;
 import sk.akademiasovy.day.myDate;
 import sk.akademiasovy.other.myClass;
 
@@ -75,11 +78,27 @@ public class Main {
 
         System.out.println("is rovnostranny"+triangel1.isEquilateral());
 
-        myDate myDate = new myDate();
+        myDate myDate=new myDate();
+        myDate.today();
         myDate.today2();
 
-        myClass myclass=new myClass();
-        System.out.println();
+        myClass myClass=new myClass();
+        System.out.println(myClass.isEmailValid("janko@hrasko"));
+        System.out.println(myClass.isEmailValid("falko87@kiflik"));
+        System.out.println(myClass.isEmailValid("jarík78@maslo"));
+        System.out.println(myClass.isEmailValid("milan sepo4@meno"));
+        System.out.println(myClass.isEmailValid("fidelko@kastro@azet.sk"));
+
+        Person s = new Teacher();
+        ((Teacher)s).Salary(2200);
+
+        Person o = new Student();
+        if (o instanceof Teacher)
+            ((Teacher)o).Salary(2200);
+
+        Object p25 = new Student();
+        ((Person)p25).setAge(45);
+
     }
 
 }
